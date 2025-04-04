@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbjklch03a85k"]
+
+[ext_resource type="Script" path="res://scenes/food_spawner.gd" id="1_4wgu1"]
+[ext_resource type="PackedScene" uid="uid://bj2513bl6yx7b" path="res://scenes/food.tscn" id="2_p1smn"]
+[ext_resource type="PackedScene" uid="uid://bri56ent8e5y2" path="res://scenes/threat.tscn" id="3_x7g61"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ee2s"]
+size = Vector2(1471, 541)
+
+[node name="EntitySpawner" type="Node2D"]
+script = ExtResource("1_4wgu1")
+food_scene = ExtResource("2_p1smn")
+threat_scene = ExtResource("3_x7g61")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="ThreatTimer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+shape = SubResource("RectangleShape2D_3ee2s")
+debug_color = Color(0.587319, 0.499758, 0.616617, 0.42)

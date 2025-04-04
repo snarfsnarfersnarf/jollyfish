@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj2513bl6yx7b"]
+
+[ext_resource type="Script" path="res://scenes/food.gd" id="1_rfx2y"]
+[ext_resource type="Texture2D" uid="uid://ce1wohefwbmnj" path="res://sprites/bettersprites/Plorb.png" id="2_s3rsy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_myh8i"]
+
+[node name="Food" type="Area2D" groups=["food"]]
+script = ExtResource("1_rfx2y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0239258, 0.0239258)
+texture = ExtResource("2_s3rsy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_myh8i")

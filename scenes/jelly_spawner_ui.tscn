@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://lpchamrbj4pm"]
+
+[ext_resource type="Script" path="res://jelly_spawner_ui.gd" id="1_q2ec7"]
+[ext_resource type="PackedScene" uid="uid://b57m04t82epw8" path="res://scenes/jellyfish.tscn" id="2_jgsoc"]
+
+[node name="JellySpawnerUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_q2ec7")
+jelly_type_a_scene = ExtResource("2_jgsoc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpawnJellyAButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Gathering Jelly (Cost 3)"
+
+[node name="SpawnJellyBButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Spawn Jelly Type B"
+
+[node name="SpawnJellyCButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Spawn Jelly Type C"
+
+[node name="SpawnJellyDButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Spawn Jelly Type D"

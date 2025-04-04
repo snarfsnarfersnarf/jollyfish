@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://p0ag2j2ufsmj"]
+
+[ext_resource type="Texture2D" uid="uid://c2q7igbcawa4h" path="res://sprites/Jelly_base.webp" id="1_55nyn"]
+[ext_resource type="Script" path="res://scenes/jelly_base.gd" id="1_yoys2"]
+[ext_resource type="PackedScene" uid="uid://b57m04t82epw8" path="res://scenes/jellyfish.tscn" id="2_wpct2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwsgx"]
+size = Vector2(170, 170)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_erbeo"]
+size = Vector2(275, 102)
+
+[node name="jelly base" type="CharacterBody2D" groups=["jelly base"]]
+script = ExtResource("1_yoys2")
+jelly_scene = ExtResource("2_wpct2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("1_55nyn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nwsgx")
+
+[node name="dropoffzone" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="Dropoffcollider" type="CollisionShape2D" parent="dropoffzone"]
+position = Vector2(0.5, 89)
+shape = SubResource("RectangleShape2D_erbeo")
+
+[node name="Node2D" type="Node2D" parent="dropoffzone" groups=["dropoff"]]
+position = Vector2(-1, 138)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FoodCounterLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -83.0
+offset_top = 94.0
+offset_right = 85.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 20
+text = "mmmm me hungy"

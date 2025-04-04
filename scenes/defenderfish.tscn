@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://d71t8pr5dv7r"]
+
+[ext_resource type="Script" path="res://scenes/defenderfish.gd" id="1_h83bc"]
+[ext_resource type="Texture2D" uid="uid://c6sbnebmlurxw" path="res://sprites/bettersprites/DefenderJelly.png" id="2_thxgu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_21u8w"]
+radius = 35.0
+
+[node name="defenderfish" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_h83bc")
+
+[node name="JellyBodySprite" type="Sprite2D" parent="."]
+position = Vector2(1, -5)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_thxgu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("CircleShape2D_21u8w")
+debug_color = Color(0.78913, 0.379495, 0.535956, 0.42)
+
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = -82.0
+offset_top = 50.0
+offset_right = 83.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 12
+text = "piss and shit"
+horizontal_alignment = 1
+autowrap_mode = 3
