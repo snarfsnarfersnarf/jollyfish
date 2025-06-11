@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_abc"]
+[ext_resource type="Texture2D" uid="uid://c6sbnebmlurxw" path="res://sprites/bettersprites/DefenderJelly.png" id="2_tex"]
+
+[sub_resource type="CircleShape2D" id="Shape"]
+radius = 32.0
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_abc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tex")
+scale = Vector2(0.075, 0.075)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("Shape")
+
+[node name="AttackArea" type="Area2D" parent="."]
+monitoring = false
+collision_layer = 0
+collision_mask = 1
+
+[node name="HitBox" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("Shape")
+position = Vector2(40, 0)
